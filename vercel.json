@@ -16,5 +16,25 @@
             "source": "/:path*",
             "destination": "/api/tmdb.js"
         }
+    ],
+    "headers": [
+        {
+            "source": "/t/p/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=604800"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=43200"
+                }
+            ]
+        }
     ]
 }
